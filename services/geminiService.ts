@@ -5,9 +5,13 @@ export class NutriBotService {
   private chat: any = null;
 
   initChat() {
-    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey || apiKey === 'undefined') {
+      console.error("Gemini API Key is missing or undefined. Please set GEMINI_API_KEY in environment variables.");
+    }
+    const ai = new GoogleGenAI({ apiKey: apiKey });
     this.chat = ai.chats.create({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-flash-latest',
       config: {
         systemInstruction: `
           Anda adalah "NutriBot", asisten pintar dari website Nutrikids. 
