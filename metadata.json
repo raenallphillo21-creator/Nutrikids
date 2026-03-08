@@ -1,0 +1,7 @@
+{
+  "name": "Nutrikids - Edukasi Cegah Stunting",
+  "description": "Platform edukasi interaktif untuk orang tua tentang bahaya stunting, cara pencegahan, dan panduan gizi anak balita dengan asisten AI pintar.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
